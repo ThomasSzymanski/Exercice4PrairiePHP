@@ -1,35 +1,33 @@
 <?php
 
-$trois = 3;
-$cinq = 5;
-$Fizz = 'Fizz';
-$Buzz = 'Buzz';
-$FizzBuzz = 'FizzBuzz';
+$Fizz = 'Fizz ';
+$Buzz = 'Buzz ';
+$FizzBuzz = 'FizzBuzz ';
 
 
-    for ($nombre=0; $nombre<=100; $nombre++)
-{
-      if (($nombre / $trois) == 0)
+    for ($nombre=0; $nombre<=100; $nombre++){
+
+
+      switch ($nombre)
       {
-          echo $Fizz;
+          case $nombre % 3 == 0:
+              echo $Fizz;
+          break;
+
+          case $nombre % 5 == 0:
+              echo $Buzz;
+          break;
+
+          case $nombre % 3 == 0 AND $nombre % 5 == 0:
+              echo $FizzBuzz;
+          break;
+
+          default:
+              echo $nombre.' ';
       }
 
-      if (($nombre / $cinq) == 0)
-      {
-          echo $Buzz;
-      }
-
-      if (($nombre / $trois) == 0 && ($nombre / $cinq) == 0)
-      {
-          echo $FizzBuzz;
-      }
-
-      echo $nombre;
+}
 
 
 
-  }
-
-
-
- ?>
+      ?>
